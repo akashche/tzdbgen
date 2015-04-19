@@ -67,8 +67,8 @@ import java.nio.file.Paths;
 import java.text.ParsePosition;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
@@ -233,7 +233,7 @@ public final class TzdbZoneRulesCompiler {
                 out.writeUTF(regionId);
             }
             // rules  -- hashset -> remove the dup
-            List<ZoneRules> rulesList = new ArrayList<>(new HashSet<>(builtZones.values()));
+            List<ZoneRules> rulesList = new ArrayList<>(new LinkedHashSet<>(builtZones.values()));
             out.writeShort(rulesList.size());
             ByteArrayOutputStream baos = new ByteArrayOutputStream(1024);
             for (ZoneRules rules : rulesList) {
@@ -275,13 +275,13 @@ public final class TzdbZoneRulesCompiler {
     private static final Matcher TIME = Pattern.compile("(?<neg>-)?+(?<hour>[0-9]{1,2})(:(?<minute>[0-5][0-9]))?+(:(?<second>[0-5][0-9]))?+").matcher("");
 
     /** The TZDB rules. */
-    private final Map<String, List<TZDBRule>> rules = new HashMap<>();
+    private final Map<String, List<TZDBRule>> rules = new LinkedHashMap<>();
 
     /** The TZDB zones. */
-    private final Map<String, List<TZDBZone>> zones = new HashMap<>();
+    private final Map<String, List<TZDBZone>> zones = new LinkedHashMap<>();
 
     /** The TZDB links. */
-    private final Map<String, String> links = new HashMap<>();
+    private final Map<String, String> links = new LinkedHashMap<>();
 
     /** The built zones. */
     private final SortedMap<String, ZoneRules> builtZones = new TreeMap<>();

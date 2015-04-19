@@ -25,10 +25,10 @@ public class TzdbGenTest {
 
 //    @Test
     public void test() throws NoSuchProviderException, NoSuchAlgorithmException, IOException {
-        Assert.assertEquals("2014j fail", "445a3802c5386e621943975d9bdbd7e57194c03b", sha1SumForVersion("2014j"));
-        Assert.assertEquals("2015a fail", "610cd4b67e1d91efd92cfd02817b6ffee45a1882", sha1SumForVersion("2015a"));
-        Assert.assertEquals("2015b fail", "4cb0510cf411f1d182c539ea7bd5b094e5bbd555", sha1SumForVersion("2015b"));
-        Assert.assertEquals("2015c fail", "603b4b75b7d40fd54d20e20d647263cc2aff42c9", sha1SumForVersion("2015c"));
+        Assert.assertEquals("2014j fail", "be6d80ad33404b71472c9ebb9582d958f53a57f4", sha1SumForVersion("2014j"));
+        Assert.assertEquals("2015a fail", "8abcae52ff2c283e61c29980e7f3cb43543392d1", sha1SumForVersion("2015a"));
+        Assert.assertEquals("2015b fail", "ec50e9d37192f87743fa16d1c8d4b0101a7789de", sha1SumForVersion("2015b"));
+        Assert.assertEquals("2015c fail", "b368182cef7a38cef65213e3535f881960354633", sha1SumForVersion("2015c"));
     }
 
     private String sha1SumForVersion(String version) throws IOException, NoSuchProviderException, NoSuchAlgorithmException {
