@@ -62,10 +62,10 @@ import static build.tools.tzdb.Utils.*;
 
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import com.redhat.openjdk.support7.StandardCharsets;
+import com.redhat.openjdk.support7.Files;
+import com.redhat.openjdk.support7.Path;
+import com.redhat.openjdk.support7.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
@@ -197,7 +197,7 @@ public final class TzdbZoneRulesCompiler {
             ex.printStackTrace();
             System.exit(1);
         }
-//        System.exit(0);
+        System.exit(0);
     }
 
     /**
@@ -236,7 +236,7 @@ public final class TzdbZoneRulesCompiler {
                 out.writeUTF(regionId);
             }
             // rules  -- hashset -> remove the dup
-            List<ZoneRules> rulesList = new ArrayList<>(new LinkedHashSet<ZoneRules>(builtZones.values()));
+            List<ZoneRules> rulesList = new ArrayList<ZoneRules>(new LinkedHashSet<ZoneRules>(builtZones.values()));
             out.writeShort(rulesList.size());
             ByteArrayOutputStream baos = new ByteArrayOutputStream(1024);
             for (ZoneRules rules : rulesList) {

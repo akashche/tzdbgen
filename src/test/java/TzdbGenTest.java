@@ -53,13 +53,13 @@ public class TzdbGenTest {
     private static final String[] ZONES = new String[]{"africa", "antarctica", "asia", "australasia", "europe",
             "northamerica", "southamerica", "backward", "etcetera", "VERSION"};
 
-//    @Test
+    @Test
     public void dummy() {
         // to enable tests comment "System.exit" callse in TzdbZoneRulesCompiler
         // and uncomment test method annotation
     }
 
-    @Test
+//    @Test
     public void test() throws NoSuchProviderException, NoSuchAlgorithmException, IOException {
         Assert.assertEquals("2014j fail", "be6d80ad33404b71472c9ebb9582d958f53a57f4", sha1SumForVersion("2014j"));
         Assert.assertEquals("2015a fail", "8abcae52ff2c283e61c29980e7f3cb43543392d1", sha1SumForVersion("2015a"));
