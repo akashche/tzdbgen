@@ -67,7 +67,7 @@ import static build.tools.tzdb.ChronoField.DAY_OF_MONTH;
 import static build.tools.tzdb.ChronoField.MONTH_OF_YEAR;
 import static build.tools.tzdb.ChronoField.YEAR;
 
-import java.util.Objects;
+import com.redhat.openjdk.support7.Objects;
 
 /**
  * A date without a time-zone in the ISO-8601 calendar system,

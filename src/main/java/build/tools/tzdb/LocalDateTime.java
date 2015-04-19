@@ -70,7 +70,7 @@ import static build.tools.tzdb.LocalTime.SECONDS_PER_DAY;
 import static build.tools.tzdb.LocalTime.SECONDS_PER_MINUTE;
 import static build.tools.tzdb.LocalTime.SECONDS_PER_HOUR;
 
-import java.util.Objects;
+import com.redhat.openjdk.support7.Objects;
 
 /**
  * A date-time without a time-zone in the ISO-8601 calendar system,

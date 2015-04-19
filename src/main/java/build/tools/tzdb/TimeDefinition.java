@@ -61,7 +61,7 @@
  */
 package build.tools.tzdb;
 
-import java.util.Objects;
+import com.redhat.openjdk.support7.Objects;
 
 /**
  * A definition of the way a local time can be converted to the actual

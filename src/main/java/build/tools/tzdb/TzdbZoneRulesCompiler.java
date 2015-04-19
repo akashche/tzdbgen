@@ -76,9 +76,9 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 import java.util.SortedMap;
 import java.util.TreeMap;
-import java.util.regex.Matcher;
+import com.google.code.regexp.Matcher;
 import java.util.regex.MatchResult;
-import java.util.regex.Pattern;
+import com.google.code.regexp.Pattern;
 
 /**
  * A compiler that reads a set of TZDB time-zone files and builds a single
@@ -197,7 +197,7 @@ public final class TzdbZoneRulesCompiler {
             ex.printStackTrace();
             System.exit(1);
         }
-        System.exit(0);
+//        System.exit(0);
     }
 
     /**
@@ -473,8 +473,8 @@ public final class TzdbZoneRulesCompiler {
     }
 
     private int parseYear(Scanner s, int defaultYear) {
-        if (s.hasNext(YEAR)) {
-            s.next(YEAR);
+        if (s.hasNext(YEAR.pattern())) {
+            s.next(YEAR.pattern());
             MatchResult mr = s.match();
             if (mr.group(1) != null) {
                 return 1900;  // systemv has min
@@ -500,8 +500,8 @@ public final class TzdbZoneRulesCompiler {
     }
 
     private int parseMonth(Scanner s) {
-        if (s.hasNext(MONTH)) {
-            s.next(MONTH);
+        if (s.hasNext(MONTH.pattern())) {
+            s.next(MONTH.pattern());
             for (int moy = 1; moy < 13; moy++) {
                 if (s.match().group(moy) != null) {
                     return moy;

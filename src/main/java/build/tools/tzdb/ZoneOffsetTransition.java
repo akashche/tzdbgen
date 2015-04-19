@@ -64,7 +64,9 @@ package build.tools.tzdb;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
+import com.redhat.openjdk.support7.Objects;
+
+import com.redhat.openjdk.support7.LongUtils;
 
 /**
  * A transition between two offsets caused by a discontinuity in the local time-line.
@@ -253,7 +255,7 @@ final class ZoneOffsetTransition implements Comparable<ZoneOffsetTransition> {
      */
     @Override
     public int compareTo(ZoneOffsetTransition transition) {
-        return Long.compare(this.toEpochSecond(), transition.toEpochSecond());
+        return LongUtils.compare(this.toEpochSecond(), transition.toEpochSecond());
     }
 
     /**

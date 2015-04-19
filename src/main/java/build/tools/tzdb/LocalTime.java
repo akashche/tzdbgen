@@ -66,7 +66,8 @@ import static build.tools.tzdb.ChronoField.MINUTE_OF_HOUR;
 import static build.tools.tzdb.ChronoField.SECOND_OF_MINUTE;
 import static build.tools.tzdb.ChronoField.SECOND_OF_DAY;
 
-import java.util.Objects;
+import com.redhat.openjdk.support7.Objects;
+import com.redhat.openjdk.support7.IntegerUtils;
 
 /**
  * A time without time-zone in the ISO-8601 calendar system,
@@ -339,11 +340,11 @@ final class LocalTime {
      * @throws NullPointerException if {@code other} is null
      */
     public int compareTo(LocalTime other) {
-        int cmp = Integer.compare(hour, other.hour);
+        int cmp = IntegerUtils.compare(hour, other.hour);
         if (cmp == 0) {
-            cmp = Integer.compare(minute, other.minute);
+            cmp = IntegerUtils.compare(minute, other.minute);
             if (cmp == 0) {
-                cmp = Integer.compare(second, other.second);
+                cmp = IntegerUtils.compare(second, other.second);
              }
         }
         return cmp;

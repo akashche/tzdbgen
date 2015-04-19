@@ -55,7 +55,7 @@
  */
 package build.tools.tzdb;
 
-import java.util.Objects;
+import com.redhat.openjdk.support7.Objects;
 
 class Utils {
 
