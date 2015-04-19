@@ -92,10 +92,10 @@ class Utils {
     }
 
     // The minimum supported year, '-999,999,999'.
-    public static final int YEAR_MIN_VALUE = -999_999_999;
+    public static final int YEAR_MIN_VALUE = -999999999;
 
     // The maximum supported year, '+999,999,999'.
-    public static final int YEAR_MAX_VALUE = 999_999_999;
+    public static final int YEAR_MAX_VALUE = 999999999;
 
 
     // Gets the length of the specified month in days.

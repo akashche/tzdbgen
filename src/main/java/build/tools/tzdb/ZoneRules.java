@@ -129,7 +129,7 @@ final class ZoneRules {
         }
 
         // convert savings transitions to locals
-        List<ZoneOffset> localTransitionOffsetList = new ArrayList<>();
+        List<ZoneOffset> localTransitionOffsetList = new ArrayList<ZoneOffset>();
         localTransitionOffsetList.add(baseWallOffset);
         for (ZoneOffsetTransition trans : transitionList) {
             localTransitionOffsetList.add(trans.getOffsetAfter());

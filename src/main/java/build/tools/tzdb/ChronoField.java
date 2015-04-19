@@ -147,7 +147,7 @@ enum ChronoField {
      * defined with any appropriate value, although defining it to be the same as ISO may be
      * the best option.
      */
-    YEAR("Year", -999_999_999, 999_999_999);
+    YEAR("Year", -999999999, 999999999);
 
     private final String name;
     private final int min;

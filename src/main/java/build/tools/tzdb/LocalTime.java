@@ -138,7 +138,7 @@ final class LocalTime {
     /**
      * Microseconds per day.
      */
-    static final long MICROS_PER_DAY = SECONDS_PER_DAY * 1000_000L;
+    static final long MICROS_PER_DAY = SECONDS_PER_DAY * 1000000L;
 
     /**
      * The hour.

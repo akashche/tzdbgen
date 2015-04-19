@@ -56,6 +56,8 @@
  */
 package build.tools.tzdb;
 
+import com.redhat.openjdk.support7.AutoCloseableUtils;
+
 import static build.tools.tzdb.Utils.*;
 
 import java.io.ByteArrayOutputStream;
@@ -64,7 +66,6 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.text.ParsePosition;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
@@ -148,7 +149,7 @@ public final class TzdbZoneRulesCompiler {
             System.out.println(")");
         }
         // source files in this directory
-        List<Path> srcFiles = new ArrayList<>();
+        List<Path> srcFiles = new ArrayList<Path>();
         for (; i < args.length; i++) {
             Path file = srcDir.resolve(args[i]);
             if (Files.exists(file)) {
@@ -218,7 +219,9 @@ public final class TzdbZoneRulesCompiler {
     private void outputFile(Path dstFile, String version,
                             SortedMap<String, ZoneRules> builtZones,
                             Map<String, String> links) {
-        try (DataOutputStream out = new DataOutputStream(Files.newOutputStream(dstFile))) {
+        DataOutputStream out = null;
+        try {
+            out = new DataOutputStream(Files.newOutputStream(dstFile));
             // file version
             out.writeByte(1);
             // group
@@ -233,7 +236,7 @@ public final class TzdbZoneRulesCompiler {
                 out.writeUTF(regionId);
             }
             // rules  -- hashset -> remove the dup
-            List<ZoneRules> rulesList = new ArrayList<>(new LinkedHashSet<>(builtZones.values()));
+            List<ZoneRules> rulesList = new ArrayList<>(new LinkedHashSet<ZoneRules>(builtZones.values()));
             out.writeShort(rulesList.size());
             ByteArrayOutputStream baos = new ByteArrayOutputStream(1024);
             for (ZoneRules rules : rulesList) {
@@ -266,6 +269,8 @@ public final class TzdbZoneRulesCompiler {
             System.out.println("Failed: " + ex.toString());
             ex.printStackTrace();
             System.exit(1);
+        } finally {
+            AutoCloseableUtils.closeQuietly(out);
         }
     }
 
@@ -275,16 +280,16 @@ public final class TzdbZoneRulesCompiler {
     private static final Matcher TIME = Pattern.compile("(?<neg>-)?+(?<hour>[0-9]{1,2})(:(?<minute>[0-5][0-9]))?+(:(?<second>[0-5][0-9]))?+").matcher("");
 
     /** The TZDB rules. */
-    private final Map<String, List<TZDBRule>> rules = new LinkedHashMap<>();
+    private final Map<String, List<TZDBRule>> rules = new LinkedHashMap<String, List<TZDBRule>>();
 
     /** The TZDB zones. */
-    private final Map<String, List<TZDBZone>> zones = new LinkedHashMap<>();
+    private final Map<String, List<TZDBZone>> zones = new LinkedHashMap<String, List<TZDBZone>>();
 
     /** The TZDB links. */
-    private final Map<String, String> links = new LinkedHashMap<>();
+    private final Map<String, String> links = new LinkedHashMap<String, String>();
 
     /** The built zones. */
-    private final SortedMap<String, ZoneRules> builtZones = new TreeMap<>();
+    private final SortedMap<String, ZoneRules> builtZones = new TreeMap<String, ZoneRules>();
 
     /** Whether to output verbose messages. */
     private boolean verbose;
@@ -325,7 +330,7 @@ public final class TzdbZoneRulesCompiler {
                     if (s.hasNext()) {
                         String first = s.next();
                         if (first.equals("Zone")) {
-                            openZone = new ArrayList<>();
+                            openZone = new ArrayList<TZDBZone>();
                             try {
                                 zones.put(s.next(), openZone);
                                 if (parseZoneLine(s, openZone)) {
