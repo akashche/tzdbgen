@@ -11,8 +11,12 @@ stay as close as possible to upstream jdk8u code.
 
 *Note: due to NIO.2 emulation limitations this utility does not support proper resolving of symbolic links*
 
-Usage
------
+Download:
+
+ * [tzdbgen-1.0.jar](https://bitbucket.org/akashche/tzdbgen/downloads/tzdbgen-1.0.jar)
+
+Build and usage
+---------------
 
 Generate `tzdb.dat` from zoneinfo files:
 
