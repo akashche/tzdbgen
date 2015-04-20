@@ -44,10 +44,20 @@ import java.io.File;
 public class Path {
     private final File file;
 
+    /**
+     * Constructor
+     *
+     * @param file file to be used as a delegate for this instance
+     */
     public Path(File file) {
         this.file = file;
     }
 
+    /**
+     * Underlying file accessor
+     *
+     * @return underlying file
+     */
     public File getFile() {
         return file;
     }
@@ -70,8 +80,6 @@ public class Path {
      *          the path to resolve against this path
      *
      * @return  the resulting path
-     *
-     * @see #relativize
      */
     public Path resolve(String other) {
         File otherFile = new File(other);
@@ -82,7 +90,38 @@ public class Path {
         }
     }
 
+    /**
+     * Returns the <em>parent path</em>, or {@code null} if this path does not
+     * have a parent.
+     *
+     * <p> The parent of this path object consists of this path's root
+     * component, if any, and each element in the path except for the
+     * <em>farthest</em> from the root in the directory hierarchy. This method
+     * does not access the file system; the path or its parent may not exist.
+     * Furthermore, this method does not eliminate special names such as "."
+     * and ".." that may be used in some implementations. On UNIX for example,
+     * the parent of "{@code /a/b/c}" is "{@code /a/b}", and the parent of
+     * {@code "x/y/.}" is "{@code x/y}". This method may be used with the {@link
+     * #normalize normalize} method, to eliminate redundant names, for cases where
+     * <em>shell-like</em> navigation is required.
+     *
+     * <p> If this path has one or more elements, and no root component, then
+     * this method is equivalent to evaluating the expression:
+     * <blockquote><pre>
+     * subpath(0,&nbsp;getNameCount()-1);
+     * </pre></blockquote>
+     *
+     * @return  a path representing the path's parent
+     */
     public Path getParent() {
         return new Path(file.getParentFile());
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String toString() {
+        return file.toString();
     }
 }
