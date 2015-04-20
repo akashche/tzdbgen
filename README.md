@@ -2,8 +2,9 @@ Time zone data utility for OpenJDK
 ==================================
 
 This utility compiles plain text [IANA time zone database](https://www.iana.org/time-zones)
-into `tzbd.dat` binary format supported by OpenJDK 8. It is based on
-[code from OpenJDK 8](http://hg.openjdk.java.net/jdk8u/jdk8u/jdk/file/801874e394a7/make/src/classes/build/tools/tzdb),
+into `tzbd.dat` binary format supported by OpenJDK 8.
+
+It is based on the [code from OpenJDK 8](http://hg.openjdk.java.net/jdk8u/jdk8u/jdk/file/801874e394a7/make/src/classes/build/tools/tzdb),
 but doesn't require [NIO.2 API](http://www.jcp.org/en/jsr/detail?id=203) so can be run using OpenJDK 6 or later.
 It contains thin (and limited) emulation layer for NIO.2 and regexes with named groups and is trying to
 stay as close as possible to upstream jdk8u code.
@@ -41,6 +42,7 @@ License information
 -------------------
 
 This project is released under the [GNU GPL v. 2](https://www.gnu.org/licenses/gpl-2.0.html).
+
 This project uses [named-regexp](https://github.com/tony19/named-regexp) implementation
 by [tony19](https://github.com/tony19) released under the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0).
 
