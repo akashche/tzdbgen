@@ -13,7 +13,7 @@ stay as close as possible to upstream jdk8u code.
 
 Download:
 
- * [tzdbgen-1.0.jar](https://bitbucket.org/akashche/tzdbgen/downloads/tzdbgen-1.0.jar)
+ * [tzdbgen-1.0.1.jar](https://bitbucket.org/akashche/tzdbgen/downloads/tzdbgen-1.0.1.jar)
 
 Build and usage
 ---------------
@@ -52,6 +52,10 @@ by [tony19](https://github.com/tony19) released under the [Apache License 2.0](h
 
 Changelog
 ---------
+
+**1.0.1** (2015-04-21)
+
+ * parent path handling fix
 
 **1.0** (2015-04-20)
 

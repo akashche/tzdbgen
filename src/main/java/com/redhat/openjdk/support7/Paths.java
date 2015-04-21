@@ -50,6 +50,6 @@ public class Paths {
      * @return Path instance
      */
     public static Path get(String path) {
-        return new Path(new File(path));
+        return new Path(new File(path).getAbsoluteFile());
     }
 }
