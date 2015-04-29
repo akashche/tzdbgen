@@ -16,29 +16,27 @@
  * <http://www.gnu.org/licenses/>.
  */
 
-package com.redhat.openjdk.support7;
-
-import java.io.Closeable;
-import java.io.IOException;
+package build.tools.tzdb.support.com.redhat.openjdk.support7;
 
 /**
- * Support class to emulate AutoClosable
+ * Partial copy of Integer from jdk7u
  */
-public class AutoCloseableUtils {
+public class IntegerUtils {
 
     /**
-     * Closes specified closable catching and ignoring IOException.
-     * Does nothing on null input.
+     * Compares two {@code int} values numerically.
+     * The value returned is identical to what would be returned by:
+     * <pre>
+     *    Integer.valueOf(x).compareTo(Integer.valueOf(y))
+     * </pre>
      *
-     * @param closeable object to close
+     * @param  x the first {@code int} to compare
+     * @param  y the second {@code int} to compare
+     * @return the value {@code 0} if {@code x == y};
+     *         a value less than {@code 0} if {@code x < y}; and
+     *         a value greater than {@code 0} if {@code x > y}
      */
-    public static void closeQuietly(Closeable closeable) {
-        if (null != closeable) {
-            try {
-                closeable.close();
-            } catch (IOException e) {
-                // ignore
-            }
-        }
+    public static int compare(int x, int y) {
+        return (x < y) ? -1 : ((x == y) ? 0 : 1);
     }
 }

@@ -16,7 +16,7 @@
  * <http://www.gnu.org/licenses/>.
  */
 
-package com.redhat.openjdk.support7;
+package build.tools.tzdb.support.com.redhat.openjdk.support7;
 
 /**
  * Partial copy from jdk7u

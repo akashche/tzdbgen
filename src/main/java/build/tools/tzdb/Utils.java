@@ -55,8 +55,6 @@
  */
 package build.tools.tzdb;
 
-import com.redhat.openjdk.support7.Objects;
-
 class Utils {
 
     // Returns the largest (closest to positive infinity)

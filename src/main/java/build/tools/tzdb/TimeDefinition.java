@@ -61,8 +61,6 @@
  */
 package build.tools.tzdb;
 
-import com.redhat.openjdk.support7.Objects;
-
 /**
  * A definition of the way a local time can be converted to the actual
  * transition date-time.

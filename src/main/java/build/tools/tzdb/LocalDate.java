@@ -62,12 +62,9 @@
 package build.tools.tzdb;
 
 import static build.tools.tzdb.Utils.*;
-import static build.tools.tzdb.LocalTime.SECONDS_PER_DAY;
 import static build.tools.tzdb.ChronoField.DAY_OF_MONTH;
 import static build.tools.tzdb.ChronoField.MONTH_OF_YEAR;
 import static build.tools.tzdb.ChronoField.YEAR;
-
-import com.redhat.openjdk.support7.Objects;
 
 /**
  * A date without a time-zone in the ISO-8601 calendar system,

@@ -64,9 +64,9 @@ package build.tools.tzdb;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import com.redhat.openjdk.support7.Objects;
+import build.tools.tzdb.support.com.redhat.openjdk.support7.Objects;
 
-import com.redhat.openjdk.support7.LongUtils;
+import build.tools.tzdb.support.com.redhat.openjdk.support7.LongUtils;
 
 /**
  * A transition between two offsets caused by a discontinuity in the local time-line.

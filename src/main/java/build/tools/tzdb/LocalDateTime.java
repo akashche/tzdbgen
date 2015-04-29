@@ -63,14 +63,12 @@ package build.tools.tzdb;
 
 import static build.tools.tzdb.Utils.*;
 import static build.tools.tzdb.LocalTime.HOURS_PER_DAY;
-import static build.tools.tzdb.LocalTime.MICROS_PER_DAY;
-import static build.tools.tzdb.LocalTime.MILLIS_PER_DAY;
 import static build.tools.tzdb.LocalTime.MINUTES_PER_DAY;
 import static build.tools.tzdb.LocalTime.SECONDS_PER_DAY;
 import static build.tools.tzdb.LocalTime.SECONDS_PER_MINUTE;
 import static build.tools.tzdb.LocalTime.SECONDS_PER_HOUR;
 
-import com.redhat.openjdk.support7.Objects;
+import build.tools.tzdb.support.com.redhat.openjdk.support7.Objects;
 
 /**
  * A date-time without a time-zone in the ISO-8601 calendar system,

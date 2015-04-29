@@ -16,17 +16,22 @@
  * <http://www.gnu.org/licenses/>.
  */
 
-package com.redhat.openjdk.support7;
+package build.tools.tzdb.support.com.redhat.openjdk.support7;
 
-import java.nio.charset.Charset;
+import java.io.File;
 
 /**
- * Partial copy from jdk7u
+ * Partial emulation of NIO.2 class
  */
-public class StandardCharsets {
+public class Paths {
 
     /**
-     * ISO Latin Alphabet No. 1, a.k.a. ISO-LATIN-1
+     * Creates Path instance from string
+     *
+     * @param path file path
+     * @return Path instance
      */
-    public static final Charset ISO_8859_1 = Charset.forName("ISO-8859-1");
+    public static Path get(String path) {
+        return new Path(new File(path).getAbsoluteFile());
+    }
 }

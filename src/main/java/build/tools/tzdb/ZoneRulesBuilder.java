@@ -65,10 +65,9 @@ import static build.tools.tzdb.Utils.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import com.redhat.openjdk.support7.Objects;
+
+import build.tools.tzdb.support.com.redhat.openjdk.support7.Objects;
 
 /**
  * A mutable builder used to create all the rules for a historic time-zone.

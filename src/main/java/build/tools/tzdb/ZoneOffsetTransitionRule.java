@@ -61,8 +61,7 @@
  */
 package build.tools.tzdb;
 
-import static build.tools.tzdb.Utils.*;
-import com.redhat.openjdk.support7.Objects;
+import build.tools.tzdb.support.com.redhat.openjdk.support7.Objects;
 
 /**
  * A rule expressing how to create a transition.

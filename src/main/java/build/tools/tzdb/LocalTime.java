@@ -66,8 +66,7 @@ import static build.tools.tzdb.ChronoField.MINUTE_OF_HOUR;
 import static build.tools.tzdb.ChronoField.SECOND_OF_MINUTE;
 import static build.tools.tzdb.ChronoField.SECOND_OF_DAY;
 
-import com.redhat.openjdk.support7.Objects;
-import com.redhat.openjdk.support7.IntegerUtils;
+import build.tools.tzdb.support.com.redhat.openjdk.support7.IntegerUtils;
 
 /**
  * A time without time-zone in the ISO-8601 calendar system,

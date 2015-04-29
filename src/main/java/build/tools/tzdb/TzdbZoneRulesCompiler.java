@@ -56,16 +56,16 @@
  */
 package build.tools.tzdb;
 
-import com.redhat.openjdk.support7.AutoCloseableUtils;
+import build.tools.tzdb.support.com.redhat.openjdk.support7.AutoCloseableUtils;
 
 import static build.tools.tzdb.Utils.*;
 
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
-import com.redhat.openjdk.support7.StandardCharsets;
-import com.redhat.openjdk.support7.Files;
-import com.redhat.openjdk.support7.Path;
-import com.redhat.openjdk.support7.Paths;
+import build.tools.tzdb.support.com.redhat.openjdk.support7.StandardCharsets;
+import build.tools.tzdb.support.com.redhat.openjdk.support7.Files;
+import build.tools.tzdb.support.com.redhat.openjdk.support7.Path;
+import build.tools.tzdb.support.com.redhat.openjdk.support7.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
@@ -76,9 +76,9 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 import java.util.SortedMap;
 import java.util.TreeMap;
-import com.google.code.regexp.Matcher;
+import build.tools.tzdb.support.com.google.code.regexp.Matcher;
 import java.util.regex.MatchResult;
-import com.google.code.regexp.Pattern;
+import build.tools.tzdb.support.com.google.code.regexp.Pattern;
 
 /**
  * A compiler that reads a set of TZDB time-zone files and builds a single

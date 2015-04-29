@@ -16,22 +16,27 @@
  * <http://www.gnu.org/licenses/>.
  */
 
-package com.redhat.openjdk.support7;
-
-import java.io.File;
+package build.tools.tzdb.support.com.redhat.openjdk.support7;
 
 /**
- * Partial emulation of NIO.2 class
+ * Partial copy of Long from jdk7u
  */
-public class Paths {
+public class LongUtils {
 
     /**
-     * Creates Path instance from string
+     * Compares two {@code long} values numerically.
+     * The value returned is identical to what would be returned by:
+     * <pre>
+     *    Long.valueOf(x).compareTo(Long.valueOf(y))
+     * </pre>
      *
-     * @param path file path
-     * @return Path instance
+     * @param  x the first {@code long} to compare
+     * @param  y the second {@code long} to compare
+     * @return the value {@code 0} if {@code x == y};
+     *         a value less than {@code 0} if {@code x < y}; and
+     *         a value greater than {@code 0} if {@code x > y}
      */
-    public static Path get(String path) {
-        return new Path(new File(path).getAbsoluteFile());
+    public static int compare(long x, long y) {
+        return (x < y) ? -1 : ((x == y) ? 0 : 1);
     }
 }
