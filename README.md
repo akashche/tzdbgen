@@ -13,7 +13,7 @@ stay as close as possible to upstream jdk8u code.
 
 Download:
 
- * [tzdbgen-1.0.1.jar](https://bitbucket.org/akashche/tzdbgen/downloads/tzdbgen-1.0.1.jar)
+ * [tzdbgen-1.0.2.jar](https://github.com/akashche/tzdbgen/releases/download/1.0.2/tzdbgen-1.0.2.jar)
 
 Build and usage
 ---------------
